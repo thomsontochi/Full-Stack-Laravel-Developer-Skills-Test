@@ -1,0 +1,9 @@
+1. Voting
+Each voter can vote in zero or more referenda. Each referendum has one or more questions, and each question is a yes/no vote. 
+Write the simplest normalized schema to describe this in generic SQL statements or as an entity-relationship diagram.
+ Point out where the indexes would be if you want to quickly know the results of a given referendum question,
+ but you never expect to query a single voter's voting record. In what way does the nature of the application affect your design judgment about privacy, 
+ and what effect would that have on normalization considerations?
+
+
+solution

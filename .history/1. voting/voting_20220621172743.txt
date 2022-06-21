@@ -1,0 +1,23 @@
+1. Voting
+Each voter can vote in zero or more referenda. Each referendum has one or more questions, and each question is a yes/no vote. 
+Write the simplest normalized schema to describe this in generic SQL statements or as an entity-relationship diagram.
+Point out where the indexes would be if you want to quickly know the results of a given referendum question,
+but you never expect to query a single voter's voting record. In what way does the nature of the application affect your design judgment about privacy, 
+ and what effect would that have on normalization considerations?
+
+
+solution Model Code
+
+Class Referendum
+
+public function questions(){ return $this->hasMany(Question::class, 'ref_id'); }
+
+Class Question
+
+public function referendum(){ return $this->belongsTo(Referendum::class, 'ref_id'); }
+
+public function votes(){ return $this->belongsToMany(Voter::class, 'voter_questions', 'question_id', 'voter_id'); }
+
+Class Voter
+
+public function questions(){ return $this->belongsTo(Voter::class, 'ref_id'); }

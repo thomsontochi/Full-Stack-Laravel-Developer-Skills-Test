@@ -1,0 +1,20 @@
+// Take a look at the following:
+
+function *foo(x) {
+  while (x < 4) {
+    x += yield x;
+  }
+  return x;
+}
+var bar = foo(3);
+console.log( bar.next(1) );
+console.log( bar.next(1) );
+console.log( bar.next(1) );
+
+
+// output
+
+> Object { value: 3, done: false }
+> Object { value: 4, done: true }
+> Object { value: undefined, done: true }
+

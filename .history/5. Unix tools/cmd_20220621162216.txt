@@ -1,0 +1,4 @@
+In one Unix command, find all of the files in /tmp whose contents contain the word "foobar" (case-insensitive), 
+and list them all in order from most-recently created to least-recently created.
+
+solutio: we can search for all of the files in a specific 

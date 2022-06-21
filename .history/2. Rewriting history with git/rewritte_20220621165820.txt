@@ -1,0 +1,22 @@
+You've getting ready to submit a pull request to the coolapp repo. You branch contains two commits: M, followed by N. The lineage is this:
+
+main:   X --> Y --> Z (HEAD commit is Z)
+                     \
+your-branch:          M --> N (HEAD commit is N)
+You want to contribute the code back to the official coolapp repo, but you realize there is a really dumb typo in one of your source code comments (not commit messages) 
+in commit M. You'd still like to submit the pull request as two commits M' and N', where M' is the fixed version of M, and N' is the same exact diff as N. 
+How do you rewrite git history to make this happen? Is N' the same hash as N? Why or why not?
+
+
+solution
+
+my approach to this will be to checkout to the stable branch and then change the commit message of last commit ie "M".
+$ git checkout "stable branch"
+$ git commit --amend
+
+The command above loads the previous commit message into an editor session, where you can make changes to the message, save those changes and exit. When you save and close the editor, 
+the editor writes a new commit containing that updated commit message and makes it your new last commit
+
+then open a text editor then will change the message and save the file and push to git then a new commit create on git.
+
+' is same hash as B because we didn't change the message of B 

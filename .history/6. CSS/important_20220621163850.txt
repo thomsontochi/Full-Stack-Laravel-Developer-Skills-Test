@@ -1,0 +1,17 @@
+/* Usage of the "!important" CSS declaration is often frowned upon by front-end developers. 
+What does the "!important" CSS declaration do? Why do front-end developers suggest using it with caution? 
+What are some cases in which it makes sense to use it? */
+
+IMPORTANT
+The ! important rule in CSS is used to add more importance to a property/value than normal. 
+In fact, if you use the ! important rule, it will override ALL previous styling rules for that specific property on that element!
+
+SAMPLE CASES
+
+#test {
+	font-size: 9px !important;	
+}
+
+In my caseabove, the element with the id of "test" will have text sized at 9px, due to the addition of! important,& this will overide any other 
+* Front-end developers suggest using it with caution because using! important, override the CSS. It may work for some CSS but may disrupt the CSS of others.
+* There are some cases in which we have to use it like there will be CSS bugs on a live site and if the client wants to fix it quickly, then we can use it! important to fix CSS issues rapidly.
